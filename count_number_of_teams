@@ -1,0 +1,19 @@
+const numTeams = function(rating) {
+  let teams = 0;
+    for(let i=0; i<rating.length-2;i++) {
+      for(let k=i+1; k<rating.length-1; k++) {
+        for(let m=k+1; m<rating.length; m++) {
+          if((rating[i] < rating[k] && rating[k] < rating[m]) || (rating[i] > rating[k] && rating[k]> rating[m])) {
+            teams++;
+    
+          }
+          else {
+            continue;
+          }
+        }
+      }
+
+    }
+
+    return teams;
+};
